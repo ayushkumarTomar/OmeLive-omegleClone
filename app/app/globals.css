@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+#localVideo {
+    width: 530px; 
+    height: 289px;
+    object-fit: fill;
+    aspect-ratio: 16/9;
+  }
+#remoteVideo {
+    margin-top: 30;
+    width: 530px; 
+    height: 289px;
+    object-fit: fill;
+    aspect-ratio: 16/9;
+  }
+
+  
