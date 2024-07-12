@@ -5,14 +5,22 @@ import { Server } from 'socket.io';
 import { RoomManager } from "./Room";
 import { NUM_OF_PLAYERS } from "./Room";
 const app = express();
-const server = http.createServer(http);
+app.use(cors({
+  origin: "https://omelive.vercel.app/", 
+  methods: ["GET", "POST"],
+  credentials: true,
+}));
+
+const server = http.createServer(app);
+const port = process.env.PORT || 8000;
 
 const io = new Server(server, {
   cors: {
-    origin: "*"
-  }
+    origin: "https://omelive.vercel.app/",
+    methods: ["GET", "POST"],
+    credentials: true, 
+  },
 });
-
 app.get("/" , (req , res)=>{
   return res.json({status: "Server working"})
 })
@@ -54,7 +62,7 @@ io.on('connection', (socket: Socket) => {
   })
 });
 
-server.listen(8000, () => {
-    console.log('listening on *:8000');
+server.listen(Number(port) , "0.0.0.0", () => {
+    console.log('listening on *:' , port);
 
 });
