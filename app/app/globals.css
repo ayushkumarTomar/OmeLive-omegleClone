@@ -10,17 +10,25 @@ html, body {
 }
 
 #localVideo {
-    width: 530px; 
-    height: 289px;
-    object-fit: fill;
     aspect-ratio: 16/9;
   }
 #remoteVideo {
-    margin-top: 30;
-    width: 530px; 
-    height: 289px;
     object-fit: fill;
     aspect-ratio: 16/9;
   }
 
+
+  @media (min-width: 768px) {
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+  }
   
+  /* Show scrollbar on mobile (default) */
+  .hide-scrollbar {
+    overflow-y: auto;
+  }
