@@ -1,33 +1,10 @@
 # OmeLive - A p2p based Omegle Clone
 
 ## Overview
+[LIVE LINK](https://omelive.vercel.app)
 
-OMELIVE is a real-time, peer-to-peer (P2P) video chat application inspired by Omegle. It enables anonymous video chat sessions between users. OmeLive uses WebRTC technology to establish direct video and audio connections between users, minimizing latency and ensuring secure communication. The application relies on a signaling server for the initial connection setup.
-## STUN AND TURN SERVERS
-For OmeLive to function effectively, especially behind restrictive NATs or firewalls, you need to include your own STUN and TURN servers. These servers assist in establishing and maintaining the peer-to-peer connections.
-### Purpose
-- **STUN Servers**: Help discover public IPs and ports for establishing direct peer-to-peer connections.
-- **TURN Servers**: Relay media when direct connections are blocked or unreliable.
-
-**Note**: Configure your own STUN and TURN servers for optimal performance and security.
-
-### Configuration
-1. **Obtain Server Information**: Use public servers for testing or set up your own for production. You can get one free from [here](https://www.metered.ca/stun-turn)
-2. **Integrate Servers**: Update WebRTC configuration in your application in configuration/config.ts.
-   ```javascript
-   const configuration = {
-     iceServers: [
-       { urls: 'stun:stun.example.org' },
-       {
-         urls: 'turn:turn.example.org',
-         username: 'yourUsername',
-         credential: 'yourPassword'
-       }
-     ]
-   };
-   ```
-3. **Test the Configuration**: Ensure connections are stable in various network environments.
-
+OMELIVE is a real-time, peer-to-peer video chat application inspired by Omegle. It allows users to anonymously connect with each other via video chat sessions.
+It uses WebRTC P2P methods; only the signaling server is used, not an SFU (Selective Forwarding Unit).
 ## Features
 
 - **Real-Time Video Calling**: High-quality, video and audio communication. 

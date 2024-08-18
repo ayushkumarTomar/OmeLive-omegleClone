@@ -3,13 +3,12 @@ import http from "http";
 import express from 'express';
 import { Server } from 'socket.io';
 import { RoomManager } from "./Room";
-import cors from "cors"
 import { NUM_OF_PLAYERS } from "./Room";
 const app = express();
 app.use(cors({
-  origin: "*",
+  origin: "https://omelive.vercel.app/", 
   methods: ["GET", "POST"],
-  credentials: true, 
+  credentials: true,
 }));
 
 const server = http.createServer(app);
@@ -22,7 +21,6 @@ const io = new Server(server, {
     credentials: true, 
   },
 });
-
 app.get("/" , (req , res)=>{
   return res.json({status: "Server working"})
 })
