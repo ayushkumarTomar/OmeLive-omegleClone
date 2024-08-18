@@ -13,7 +13,7 @@ For OmeLive to function effectively, especially behind restrictive NATs or firew
 
 ### Configuration
 1. **Obtain Server Information**: Use public servers for testing or set up your own for production. You can get one free from [here](https://www.metered.ca/stun-turn)
-2. **Integrate Servers**: Update WebRTC configuration in your application in configuration/config.ts.
+2. **Integrate Servers**: Update WebRTC configuration in your application in config/config.ts.
    ```javascript
    const configuration = {
      iceServers: [
